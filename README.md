@@ -31,11 +31,12 @@ I then evaluated two different quality metrics as my response variables:
 
 I trained classification models (logistic regression, random forest, XGBoost) and regression models (Ridge, Lasso, KNN, RF, Gradient Boosting) using 5-fold GroupKFold cross-validation, then evaluated each as a selector.
 
-[Watch video demo of the results](AD_selection.mov) - in this video, ground-truth human AD is labeled as "GT AD", and the highest ranked candidate description is labeled as "AI AD". The dubbed audio matches "AI AD", and the logistic regression Q2 rankings. 
+https://github.com/user-attachments/assets/bf61f9ce-a84a-4cc9-8bbc-8151118373a5 
+In this video, ground-truth human AD is labeled as "GT AD", and the highest ranked candidate description is labeled as "AI AD". The dubbed audio matches "AI AD", and the logistic regression Q2 rankings. 
 
 
 ## Results
-
+```
 Model                    Q1 acc.    Q2 acc.    
 ─────────────────────────────────────────────────────────
 Baseline: random          20.1%      20.1%     
@@ -53,6 +54,7 @@ Lasso                     20.5%      30.0% ✓
 KNN                       21.3%      24.5%     
 Random Forest             20.7%      29.7%     
 XGBoost                   19.7%      29.3%   
+```
 
 Logistic regression with action score (Q2) achieved the best classification result (33.7%, +13.6pp over random baseline). Regression-based selection (30.0%) nearly matched classification. All regression models converged to similar accuracy, indicating the bottleneck is feature set size rather than model architecture. Q1 (embedding similarity) performed near chance across all models, confirming it is not an effective quality metric for 
 this task.
@@ -60,9 +62,9 @@ this task.
 The most important features under Q2 were action verb count, pronoun-to-noun ratio, and consensus score.
 
 
-As shown in the video demo, the selector model can pick descriptions that sort of follow GT AD, but it remains that the generation step is still very computationally expensive. In future work, this is the main issue I want to address.
+As shown in the video demo, the selector model can pick descriptions that slightly follow GT AD, but it remains that the generation step is still very computationally expensive. In future work, this is the main issue I want to address.
 
-For additional information, read my research proposal and final report, which also include citaitons.[^1]<br>
+For additional information, read my research proposal and final report, which also include citations.[^1]<br>
 
 
 ![Project Proposal](AD_selection_proposal.pdf)<br>
