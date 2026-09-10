@@ -31,8 +31,7 @@ I then evaluated two different quality metrics as my response variables:
 
 I trained classification models (logistic regression, random forest, XGBoost) and regression models (Ridge, Lasso, KNN, RF, Gradient Boosting) using 5-fold GroupKFold cross-validation, then evaluated each as a selector.
 
-https://github.com/user-attachments/assets/bf61f9ce-a84a-4cc9-8bbc-8151118373a5 
-In this video, ground-truth human AD is labeled as "GT AD", and the highest ranked candidate description is labeled as "AI AD". The dubbed audio matches "AI AD", and the logistic regression Q2 rankings. 
+[Watch video demo of the results](AD_selection.mov) In this video, ground-truth human AD is labeled as "GT AD", and the highest ranked candidate description is labeled as "AI AD". The dubbed audio matches "AI AD", and the logistic regression Q2 rankings. 
 
 
 ## Results
